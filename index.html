@@ -49,10 +49,46 @@
 
 
 
+            <div class="cards-container" id="cards-container"></div>
+
+
         </main>
 
+    </div>
 
 
+
+    
+    <!-- MODAL FOR ADDING/EDITING CARD -->
+    <div class="modal-cont hidden" id="modal-cont">
+        <div class="modal-content">
+            <h2 id="modal-title">Create New Card</h2>
+
+            <form id="card-form"  action="">
+                <div class="form-element">
+                    <label for="">Title <span class="red-star">*</span></label>
+                    <input type="text" id="card-title" placeholder="Enter card title" required>
+                </div>
+                <div class="form-element">
+                    <label for="">Description</label>
+                    <textarea id="card-description" placeholder="Describe your card content" required></textarea>
+                </div>
+                <div class="form-element">
+                    <label for="">Tags (comma-separated)</label>
+                    <input type="text" id="card-title" placeholder="e.g., Work, Personal, Fun, Idea...." required>
+                </div>
+                <div class="form-element">
+                    <label for="">Date</label>
+                    <input type="date" id="card-date">
+                </div>
+
+
+                <div class="modal-btns-cont">
+                    <button id="cancel-card-btn" class="cancel-card-btn">Cancel</button>
+                    <button id="save-card-btn" class="save-card-btn"><i class="ri-checkbox-circle-fill"></i> Done</button>
+                </div>
+            </form>
+        </div>
     </div>
 
 

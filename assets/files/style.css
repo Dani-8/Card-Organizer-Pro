@@ -160,11 +160,125 @@ body{
     color: #a0aec0;
 }
 
+
+
+
 /* Utility classes */
+
 /* .hidden {
     display: none !important;
 } */
 
+
+
+
+/* MODAL */
+.modal-cont, .confirmation-modal{
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-content, .confirmation-modal-content{
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.2);
+    min-width: 500px;
+    border-top: 7px solid rgb(119, 77, 208);
+}
+.modal-content h2{
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 30px;
+}
+/* .modal-content {
+    transform: translateY(-50px);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+} */
+.modal-active .modal-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+.form-element{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 20px;
+    /* background-color: lightblue; */
+}
+.red-star{
+    color: rgb(231, 73, 0);
+}
+.form-element input, textarea{
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid rgb(214, 214, 214);
+    font-size: 16px;
+}
+.form-element textarea{
+    height: 100px;
+}
+
+
+
+
+.modal-btns-cont{
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+    margin-top: 25px;
+}
+.modal-btns-cont > button, .confirmation-modal-btns-cont > button{
+    padding: 10px 35px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 8px 15px -10px rgba(138, 138, 138, 0.3);
+    transition: .3s ease;
+}
+
+.cancel-card-btn, .cancel-delete-btn{
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(180, 180, 180, 0.5) !important;
+    color: black;
+    transition: 0.3s ease;
+}
+.cancel-card-btn:hover, .cancel-delete-btn:hover{
+    background-color: rgb(244, 250, 255);
+    box-shadow: 0 8px 15px -5px rgba(138, 138, 138, 0.5);
+    transform: translateY(-3px);
+}
+.save-card-btn{
+    color: white;
+    background: linear-gradient(to right top, rgb(95, 52, 189), rgb(186, 103, 255));
+    transition: 0.3s ease;
+}
+.save-card-btn:hover{
+    background: linear-gradient(to right top, rgb(80, 37, 172), rgb(174, 79, 251));
+    box-shadow: 0 8px 15px -5px rgba(138, 138, 138, 0.5);
+    transform: translateY(-3px);
+}
+.confirm-delete-btn{
+    color: white;
+    background-color: rgb(249, 69, 63);
+    transition: 0.3s ease;
+}
+.confirm-delete-btn:hover{
+    background-color: rgb(229, 5, 5);
+    transform: translateY(-3px);
+}
 
 
 
