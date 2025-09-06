@@ -185,8 +185,8 @@ body{
     align-items: center;
     z-index: 999;
 }
-
 .modal-content, .confirmation-modal-content{
+    position: relative;
     background-color: white;
     border-radius: 12px;
     padding: 30px;
@@ -194,7 +194,40 @@ body{
     min-width: 500px;
     border-top: 7px solid rgb(119, 77, 208);
 }
+
+
+.close-modal-btn{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #a0aec0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: transparent;
+    /* background-color: red; */
+    border: none;
+    border-radius: 99999px;
+    padding: 7px;
+    transition: all 0.2s ease-in-out;
+}
+.close-modal-btn svg{
+    width: 25px;
+    height: 25px;
+}
+.close-modal-btn:hover{
+    background-color: rgb(237, 241, 248);
+    color: black;
+    transform: rotate(90deg);
+}
+.close-modal-btn:active{
+    transform: rotate(180deg) scale(0.90);
+}
+
+
 .modal-content h2{
+    margin-top: 30px;
     margin-bottom: 30px;
     text-align: center;
     font-size: 30px;
@@ -218,19 +251,33 @@ body{
 .red-star{
     color: rgb(231, 73, 0);
 }
+.form-element label{
+    font-weight: 600;
+    color: #354a65;
+}
 .form-element input, textarea{
     width: 100%;
-    padding: 10px;
+    padding: 10px 10px 10px 15px;
     border-radius: 10px;
     outline: none;
     border: 1px solid rgb(214, 214, 214);
-    font-size: 16px;
+    font-size: 15px;
+    transition: 0.3s ease;
 }
 .form-element textarea{
     height: 100px;
+    resize: none;
 }
+.form-element input::placeholder, textarea::placeholder{
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.form-element input:focus, textarea:focus{
+    outline: none;
+    border-color: rgb(95, 52, 189);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.3);
 
-
+}
 
 
 .modal-btns-cont{
@@ -264,6 +311,7 @@ body{
     color: white;
     background: linear-gradient(to right top, rgb(95, 52, 189), rgb(186, 103, 255));
     transition: 0.3s ease;
+    font-weight: 600;
 }
 .save-card-btn:hover{
     background: linear-gradient(to right top, rgb(80, 37, 172), rgb(174, 79, 251));
