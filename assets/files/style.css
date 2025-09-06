@@ -58,51 +58,112 @@ body{
     justify-content: center;
     align-items: center;
     gap: 30px;
+    margin-bottom: 50px;
 }
 .add-card-btn{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
+
+    box-shadow: 0px 5px 15px rgba(129, 129, 129, 0.4);
+    background: linear-gradient(to right bottom, rgb(95, 52, 189), rgb(186, 103, 255));
+    color: white;
     padding: 12px 40px;
     border-radius: 50px;
     font-size: 17px;
+    font-weight: 700;
     cursor: pointer;   
     outline: none;
     border: none;
+    transition: 0.3s ease;
 }
+.add-card-btn:hover{
+    box-shadow: 0px 15px 15px rgba(134, 134, 134, 0.3);
+    background: linear-gradient(to right bottom, rgb(80, 37, 172), rgb(174, 79, 251));
+    transform: translateY(-5px) scale(1.01);
+}
+.add-card-btn:active{
+    transform: translateY(-1px) scale(0.95);
+
+}
+
 .search-input{
-    background-color: rgb(244, 244, 244);
+    background-color: rgb(255, 255, 255);
     width: 350px;
     border-radius: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    overflow: hidden;
+    /* overflow: hidden; */
     position: relative;
 }
 .search-input .search-icon{
     position: absolute;
-    top: 10px;
-    left: 12px;
+    top: 12px;
+    left: 13px;
     transform: translate(50% 10%);
-    width: 20px;
+    width: 18px;
+    height: 18px;
+    color: rgb(72, 72, 72);
 }
 
 .search-input input{
     background-color: transparent;
+    border-radius: 50px;
     outline: none;
-    border: none;
     width: 100%;
-    padding: 15px 20px 15px 40px;
-    font-size: 15px;
+    padding: 13px 20px 13px 38px;
+    font-size: 13px;
+
+    border: 1px solid rgba(125, 125, 125, 0.5);
+    box-shadow: 0 5px 10px -1px rgba(177, 177, 177, 0.299);
+    transition: all 0.3s ease-in-out;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.search-input input:focus{
+    outline: none;
+    border-color: rgb(95, 52, 189);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.3);
+
 }
 
+/* Empty State styling */
+.empty-state {
+    text-align: center;
+    color: rgb(101, 101, 101);
+    padding: 3rem;
+    border: 2px dashed rgb(215, 215, 215);
+    border-radius: 0.75rem;
+    max-width: 32rem;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(251, 252, 255);
+    box-shadow: 0 8px 15px -4px rgba(138, 138, 138, 0.344);
+}
 
+.empty-state .empty-text {
+    font-size: 1.25rem;
+    margin-bottom: 1.25rem;
+    font-weight: 500;
+}
 
+.empty-state svg {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #a0aec0;
+}
 
-
+/* Utility classes */
+/* .hidden {
+    display: none !important;
+} */
 
 
 
