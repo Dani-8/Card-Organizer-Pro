@@ -192,10 +192,17 @@ body{
     padding: 30px;
     box-shadow: 0 5px 15px rgba(0,0,0,.2);
     min-width: 500px;
-    height: 700px;
+    height: 90%;
     border-top: 7px solid rgb(119, 77, 208);
-    overflow-y: scroll;
 
+    overflow-y: scroll;
+    /* Hide scrollbar for different browsers */
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+}
+/* For WebKit browsers (Chrome, Safari) */
+.modal-content::-webkit-scrollbar {
+    display: none;
 }
 
 
@@ -247,7 +254,7 @@ body{
 .form-element{
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 8px;
     margin-bottom: 20px;
     /* background-color: lightblue; */
 }
