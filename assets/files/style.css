@@ -242,11 +242,11 @@ body{
     text-align: center;
     font-size: 30px;
 }
-/* .modal-content {
+.modal-content {
     transform: translateY(-50px);
     opacity: 0;
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-} */
+}
 .modal-active .modal-content {
     opacity: 1;
     transform: translateY(0);
@@ -300,10 +300,15 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    cursor: pointer;
     transition: 0.3s ease;
 }
 .img-upload-cont:hover{
+    background-color: rgb(250, 250, 250);
     border-color: rgb(123, 68, 241);
+}
+.img-upload-cont:focus{
+    transform: scale(0.95);
 }
 
 .img-upload-cont svg{
@@ -315,6 +320,49 @@ body{
     font-size: 14px;
     color: #9b9b9b;
 }
+/* PREVIEW UPLOADED IMG */
+.image-preview-cont{
+    position: relative;
+    background-color: rgba(249, 243, 255, 0.7);
+    border: 2px dashed rgb(164, 164, 164);
+    border-radius: 10px;
+    width: 100%;
+    height: 160px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease;
+}
+.image-preview{
+    /* background-color: lightblue; */
+    width: 70%;
+    height: 100%;
+    border-radius: 5px;
+}
+.clear-image-btn{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 3px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 50px;
+    background-color: white;
+    box-shadow: 0 0 10px -3px rgb(86, 86, 86);
+}
+.clear-image-btn svg{
+    margin-bottom: 5px;
+    height:  17px;
+    width: 17px;
+    color: rgb(229, 5, 5);
+}
+.clear-image-btn:active{
+    transform: scale(0.95);
+}
+
+
 
 .modal-btns-cont{
     display: flex;
