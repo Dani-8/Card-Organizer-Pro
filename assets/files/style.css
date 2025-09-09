@@ -232,11 +232,11 @@ body{
     text-align: center;
     font-size: 30px;
 }
-/* .modal-content {
+.modal-content {
     transform: translateY(-50px);
     opacity: 0;
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-} */
+}
 .modal-active .modal-content {
     opacity: 1;
     transform: translateY(0);
