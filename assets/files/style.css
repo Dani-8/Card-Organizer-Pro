@@ -192,7 +192,10 @@ body{
     padding: 30px;
     box-shadow: 0 5px 15px rgba(0,0,0,.2);
     min-width: 500px;
+    height: 700px;
     border-top: 7px solid rgb(119, 77, 208);
+    overflow-y: scroll;
+
 }
 
 
@@ -279,6 +282,32 @@ body{
 
 }
 
+
+/* UPLOAD IMG UI */
+.img-upload-cont{
+    border: 2px dashed rgb(164, 164, 164);
+    border-radius: 10px;
+    width: 100%;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.3s ease;
+}
+.img-upload-cont:hover{
+    border-color: rgb(123, 68, 241);
+}
+
+.img-upload-cont svg{
+    width: 40px;
+    height: 40px;
+    color: #9b9b9b;
+}
+.upload-text{
+    font-size: 14px;
+    color: #9b9b9b;
+}
 
 .modal-btns-cont{
     display: flex;
