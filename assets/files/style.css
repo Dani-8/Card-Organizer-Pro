@@ -165,9 +165,9 @@ body{
 
 /* Utility classes */
 
-/* .hidden {
+.hidden {
     display: none !important;
-} */
+}
 
 
 
@@ -232,11 +232,11 @@ body{
     text-align: center;
     font-size: 30px;
 }
-.modal-content {
+/* .modal-content {
     transform: translateY(-50px);
     opacity: 0;
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
+} */
 .modal-active .modal-content {
     opacity: 1;
     transform: translateY(0);
@@ -307,16 +307,24 @@ body{
     box-shadow: 0 8px 15px -5px rgba(138, 138, 138, 0.5);
     transform: translateY(-3px);
 }
+.cancel-card-btn:focus, .cancel-delete-btn:focus{
+    box-shadow: 0 0px 0px 3px rgba(230, 230, 230, 0.8);
+    transform: scale(0.95);
+}
 .save-card-btn{
     color: white;
     background: linear-gradient(to right top, rgb(95, 52, 189), rgb(186, 103, 255));
-    transition: 0.3s ease;
     font-weight: 600;
+    transition: 0.3s ease;
 }
 .save-card-btn:hover{
     background: linear-gradient(to right top, rgb(80, 37, 172), rgb(174, 79, 251));
     box-shadow: 0 8px 15px -5px rgba(138, 138, 138, 0.5);
     transform: translateY(-3px);
+}
+.save-card-btn:focus{
+    box-shadow: 0 0px 0px 4px rgb(212, 160, 255);
+    transform: scale(0.95);
 }
 .confirm-delete-btn{
     color: white;
@@ -327,6 +335,28 @@ body{
     background-color: rgb(229, 5, 5);
     transform: translateY(-3px);
 }
+.confirm-delete-btn:focus{
+    box-shadow: 0 0px 0px 4px rgba(255, 132, 132, 0.788);
+    transform: scale(0.95);
+}
+
+
+
+
+/* CONFIRMATION MODAL */
+
+.confirmation-modal-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border-top: 7px solid rgb(229, 5, 5);
+}
+
+.confirmation-modal-btns-cont{
+    margin-top: 20px;
+}
+
 
 
 
