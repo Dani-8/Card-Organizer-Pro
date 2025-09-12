@@ -49,7 +49,9 @@
 
 
 
-            <div class="cards-container" id="cards-container"></div>
+            <div class="cards-container" id="cards-container">
+
+            </div>
 
 
         </main>
@@ -62,7 +64,7 @@
     <!-- MODAL FOR ADDING/EDITING CARD -->
     <div class="modal-cont hidden" id="modal-cont">
         <div class="modal-content">
-            <button id="close-card-modal-btn" class="close-modal-btn" aria-label="Close card modal">
+            <button id="close-modal-btn" class="close-modal-btn" aria-label="Close card modal">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/>
                 </svg>
@@ -71,6 +73,7 @@
             <h2 id="modal-title">Create New Card</h2>
 
             <form id="card-form"  action="">
+                <input type="hidden" id="card-id"> <!-- Hidden input for card ID when editing -->
                 <div class="form-element">
                     <label for="">Title <span class="red-star">*</span></label>
                     <input type="text" id="card-title" placeholder="Enter card title" required>
@@ -81,7 +84,7 @@
                 </div>
                 <div class="form-element">
                     <label for="">Tags (comma-separated)</label>
-                    <input type="text" id="card-title" placeholder="e.g., Work, Personal, Fun, Idea...." required>
+                    <input type="text" id="card-tag" placeholder="e.g., Work, Personal, Fun, Idea...." required>
                 </div>
                 <div class="form-element">
                     <label for="">Upload an Image (optional)</label>
@@ -109,7 +112,9 @@
 
                 <div class="modal-btns-cont">
                     <button id="cancel-card-btn" class="cancel-card-btn">Cancel</button>
-                    <button id="save-card-btn" class="save-card-btn"><i class="ri-checkbox-circle-fill"></i> Done</button>
+                    <button id="save-card-btn" class="save-card-btn">
+                        <span id="save-card-btn-text">Done</span>
+                    </button>
                 </div>
             </form>
         </div>
@@ -119,7 +124,7 @@
 
 
     <!-- CONFIRMATION MODAL -->
-    <div class="confirmation-modal hidden" id="confirmation-modal">
+    <div class="confirmation-modal hidden" id="confirmation-delete-modal">
         <div class="confirmation-modal-content">
             <h2>Confirm Deletion</h2>
             <p>Are you sure you want to delete this card?</p>
@@ -133,7 +138,12 @@
 
 
     <!-- Toast Notification Container -->
-    <div id="toast-container"></div>
+    <div id="toast-container">
+        <div class="toast">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M9 12l2 2 4-4"/></svg>
+            <span>Succes</span>
+        </div>
+    </div>
 
 
 

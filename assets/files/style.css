@@ -200,6 +200,10 @@ body{
     -ms-overflow-style: none; 
     scrollbar-width: none; 
 }
+.confirmation-modal-content{
+    height: fit-content;
+}
+
 /* For WebKit browsers (Chrome, Safari) */
 .modal-content::-webkit-scrollbar {
     display: none;
@@ -242,11 +246,11 @@ body{
     text-align: center;
     font-size: 30px;
 }
-.modal-content {
+/* .modal-content {
     transform: translateY(-50px);
     opacity: 0;
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
+} */
 .modal-active .modal-content {
     opacity: 1;
     transform: translateY(0);
@@ -440,6 +444,56 @@ body{
 .confirmation-modal-btns-cont{
     margin-top: 20px;
 }
+
+
+
+/* TOAST */
+
+#toast-container{
+    position: fixed;
+    top: 30px;
+    right: 30px;
+
+
+}
+.toast{
+    background-color: rgb(20, 139, 58);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 35px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    /* transform: translateX(100%); */
+    animation: toast-in 0.3s ease-out forwards, toast-out 0.3s ease-in forwards 2.7s; /* Show for ~3s */
+}
+.toast svg{
+    width: 20px;
+    height: 20px;
+}
+.toast.error{
+    background-color: rgb(201, 41, 41);
+}
+
+
+@keyframes toast-in{
+    from{
+        opacity: 0; transform: translateX(100%); filter: blur(10);
+    }to{
+        opacity: 1; transform: translateX(0%); filter: blur(0);
+    }
+}
+
+
+
+
+
+
 
 
 
