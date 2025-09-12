@@ -52,6 +52,9 @@ document.addEventListener("DOMContentLoaded", () => {
 // --------------------------------------------------------------------------------------------------------
 // --------------------------------------------------------------------------------------------------------
 
+/**
+ * SHOWS A TOAST NOTIFICATION
+ */
 
     const showToast = (msg, type = "success") => {
         let toast = document.createElement("div")
@@ -80,12 +83,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+    /**
+     * UPDATES THE VISIBILITY OF THE EMPTY STATE BASED ON NUMBER OF CARDS.
+     */
+
+    const updateEmptyState = (filteredCards) => {
+        if(filteredCards.length === 0){
+            emptyState.classList.remove("hidden")
+            cardsContainer.classList.add("hidden")
+        }else{
+            emptyState.classList.add("hidden")
+            cardsContainer.classList.remove("hidden")
+        }
+    }
 
 
 
+    /**
+     * RENDERS CARDS...
+     */
 
-
-
+    
 
 
 
