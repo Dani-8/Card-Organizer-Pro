@@ -130,18 +130,52 @@ document.addEventListener("DOMContentLoaded", () => {
      * RENDERS CARDS...
      */
 
-    // const renderCards = () => {
-    //     cardsContainer.innerHTML = ""
-    //     let searchTerm = searchInput.value.toLowerCase()
+    const renderCards = () => {
+        cardsContainer.innerHTML = ""
+        let searchTerm = searchInput.value.toLowerCase()
 
-    //     const filteredCards = cards.filter(card => {
-    //         return card.title.toLowerCase().includes(searchTerm) || card.description.toLowerCase().includes(searchTerm)
-    //     })
+        const filteredCards = cards.filter(card => {
+            return card.title.toLowerCase().includes(searchTerm) || card.description.toLowerCase().includes(searchTerm)
+        })
+
+        filteredCards.forEach((card, index) => {
+            let cardElement = document.createElement("div")
+            cardElement.classList.add("card")
+            cardElement.style.animationDelay = `${index * 0.05}s`
+
+
+            let imageContentHTML = ""
+
+            // FIRST LOCAL FILE IMG, THEN DEFAULT PLACEHOLDER
+            if(localImageURL){
+                imageContentHTML.innerHTML = `
+                    <img src="${card.localImageURL}" class="card-image" alt="${card.title}">
+                `
+            }else{
+                // DEFAULT PLACEHOLDER IF NO IMAGE FILE
+                imageContentHTML.innerHTML = `
+                    <div class="card-image-placeholder">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/>
+                        </svg>
+                    </div>
+                `
+            }
+
+
+            // CARD
+            cardElement.innerHTML = `
+                
+            `
 
 
 
 
-    // }
+            cardsContainer.appendChild(cardElement)
+        })
+
+
+    }
 
 
 
