@@ -57,7 +57,15 @@ document.addEventListener("DOMContentLoaded", () => {
      * HANDLE FORM SUBMISSIOIN FOR ADDING/EDITING THE CARD....
      */
 
-    cardForm.addEventListener("submit" )
+    cardForm.addEventListener("submit", async (e) => {
+        e.preventDefault()
+
+        
+
+
+
+
+    })
 
 
 
