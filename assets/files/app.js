@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const cardID = document.getElementById("card-id")
     const cardTitle = document.getElementById("card-title")
     const cardDescp = document.getElementById("card-description")
-    const cardTag = document.getElementById("card-tag")
+    const cardTags = document.getElementById("card-tag")
     const cardIMGInput = document.getElementById("image-file-input")
     const cardDate = document.getElementById("card-date")
 
@@ -60,7 +60,11 @@ document.addEventListener("DOMContentLoaded", () => {
     cardForm.addEventListener("submit", async (e) => {
         e.preventDefault()
 
-        
+        let title = cardTitle.value.trim()
+        let description = cardDescp.value.trim()
+        let tags = cardTags.value
+        let imageFile = cardIMGInput.value[0]
+        let 
 
 
 
