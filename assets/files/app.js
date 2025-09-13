@@ -64,7 +64,10 @@ document.addEventListener("DOMContentLoaded", () => {
         let description = cardDescp.value.trim()
         let tags = cardTags.value
         let imageFile = cardIMGInput.value[0]
-        let 
+        let date = cardDate.value
+
+
+        
 
 
 
