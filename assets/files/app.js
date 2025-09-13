@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const modelTitle = document.getElementById("model-tite")
 
     // CARD
+    const cardForm = document.getElementById("card-form")
     const cardID = document.getElementById("card-id")
     const cardTitle = document.getElementById("card-title")
     const cardDescp = document.getElementById("card-description")
@@ -31,9 +32,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // DELETE MODEL
-    const deleteModal = customElements.getElementById("confirmation-delete-modal")
-    const cancelDeleteBtn = customElements.getElementById("cancel-delete-btn")
-    const confirmDeleteBtn = customElements.getElementById("confirm-delete-btn")
+    const deleteModal = document.getElementById("confirmation-delete-modal")
+    const cancelDeleteBtn = document.getElementById("cancel-delete-btn")
+    const confirmDeleteBtn = document.getElementById("confirm-delete-btn")
 
     // TOAST
     const toastContainer = document.getElementById("toast-container")
@@ -52,9 +53,20 @@ document.addEventListener("DOMContentLoaded", () => {
 // --------------------------------------------------------------------------------------------------------
 // --------------------------------------------------------------------------------------------------------
 
-/**
- * SHOWS A TOAST NOTIFICATION
- */
+    /**
+     * HANDLE FORM SUBMISSIOIN FOR ADDING/EDITING THE CARD....
+     */
+
+    cardForm.addEventListener("submit" )
+
+
+
+
+
+
+    /**
+     * SHOWS A TOAST NOTIFICATION
+     */
 
     const showToast = (msg, type = "success") => {
         let toast = document.createElement("div")
@@ -103,8 +115,18 @@ document.addEventListener("DOMContentLoaded", () => {
      * RENDERS CARDS...
      */
 
-    
+    // const renderCards = () => {
+    //     cardsContainer.innerHTML = ""
+    //     let searchTerm = searchInput.value.toLowerCase()
 
+    //     const filteredCards = cards.filter(card => {
+    //         return card.title.toLowerCase().includes(searchTerm) || card.description.toLowerCase().includes(searchTerm)
+    //     })
+
+
+
+
+    // }
 
 
 
