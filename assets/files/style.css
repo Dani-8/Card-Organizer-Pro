@@ -40,12 +40,20 @@ body{
 /* ----------------------------------------------------------------------- */
 /* ----------------------------------------------------------------------- */
 /* ----------------------------------------------------------------------- */
+/* Utility classes */
+.hidden {
+    display: none !important;
+}
+
 
 /* MAIN CONTENT */
 .main-content{
     /* background-color: rgb(128, 175, 240); */
-    padding: 20px;
-    
+    padding: 20px 0 50px;
+    width: 100%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* TOP-CONTROL */
@@ -162,12 +170,162 @@ body{
 
 
 
+/* CARD CONTAINER & CARD */
+.cards-container{
+    /* background: lightblue; */
+    display: grid; 
+    grid-template-columns: repeat(3, minmax(0, 1fr)); 
+    gap: 1.5rem;    
 
-/* Utility classes */
-
-.hidden {
-    display: none !important;
 }
+
+.card{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 20px;
+    border-bottom: 5px solid rgb(119, 77, 208);
+
+    overflow: hidden;
+    /* ANIMATION FOR NEW CARDS*/
+    animation: card-entry 0.5s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+    position: relative;
+    transition: all 0.5s ease;
+}
+/* Keyframes for new card entry animation */
+@keyframes card-entry {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 20px 30px -8px rgba(0, 0, 0, 0.2), 0 8px 15px -8px rgba(0, 0, 0, 0.15);
+}
+
+
+.card-image {
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    object-fit: cover;
+    width: 100%;
+    height: 10rem; 
+    display: block;
+    transition: transform 0.3s ease-out; 
+}
+.card:hover .card-image {
+    transform: scale(1.05);
+}
+.card-image-placeholder {
+    background: linear-gradient(to right top, rgb(78, 81, 203), rgb(190, 143, 255));
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    height: 10rem;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem; 
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    position: relative;
+    overflow: hidden; 
+}
+
+.card-image-placeholder svg {
+    width: 5rem;
+    height: 5rem;
+    opacity: 0.8;
+}
+
+.card-title {
+    font-size: 1.375rem; 
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 0.6rem;
+    word-wrap: break-word;
+    line-height: 1.3;
+}
+
+.card-date {
+    color: #4b5563;
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+}
+
+.card-date svg {
+    width: 1.05rem;
+    height: 1.05rem;
+    margin-right: 0.5rem;
+    color: #4f46e5;
+}
+
+.card-description {
+    color: #374151;
+    font-size: 1rem;
+    flex-grow: 1;
+    margin-bottom: 1.25rem;
+    word-wrap: break-word;
+}
+
+
+.card-actions{
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-top: auto;
+}
+
+/* CARD BTNS */
+.card-action-button {
+    padding: 0.6rem;
+    border-radius: 9999px;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, transform 0.1s ease-out;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card-action-button svg {
+    width: 1.35rem;
+    height: 1.35rem;
+}
+
+
+.edit-card-button {
+    color: #4f46e5;
+}
+.edit-card-button:hover {
+    color: #4338ca;
+    background-color: #eef2ff;
+    transform: scale(1.1);
+}
+.edit-card-button:active {
+    transform: scale(0.95);
+}
+
+
+.delete-card-button {
+    color: #dc2626;
+}
+.delete-card-button:hover {
+    color: #991b1b;
+    background-color: #fef2f2;
+    transform: scale(1.1);
+}
+.delete-card-button:active {
+    transform: scale(0.95);
+}
+
 
 
 
