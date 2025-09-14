@@ -135,7 +135,11 @@ document.addEventListener("DOMContentLoaded", () => {
         let searchTerm = searchInput.value.toLowerCase()
 
         const filteredCards = cards.filter(card => {
-            return card.title.toLowerCase().includes(searchTerm) || card.description.toLowerCase().includes(searchTerm)
+            let = titleMatch = card.title.toLowerCase().includes(searchTerm) 
+            let = descriptionMatch = card.description.toLowerCase().includes(searchTerm)
+            let = tagsMatch = card.tags.some(tag => tag.toLowerCase().includes(searchTerm))
+
+            return titleMatch || descriptionMatch || tagsMatch 
         })
 
         filteredCards.forEach((card, index) => {
@@ -167,6 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
             cardElement.innerHTML = `
                 ${imageContentHTML}
                 <h3 class="card-title">${card.title}</h3>
+                <p class="card-description">${card.description}</p>
                 <p class="card-date">
                     <!-- Calendar icon SVG -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -174,7 +179,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     </svg>
                     ${card.date || 'No date specified'}
                 </p>
-                <p class="card-description">${card.description}</p>
+
+
                 <div class="card-actions">
                     <button class="card-action-button edit-card-button" data-id="${card.id}" aria-label="Edit card: ${card.title}">
                         <!-- Edit3 icon SVG -->
