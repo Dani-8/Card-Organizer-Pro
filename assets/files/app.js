@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let imageContentHTML = ""
 
             // FIRST LOCAL FILE IMG, THEN DEFAULT PLACEHOLDER
-            if(localImageURL){
+            if(card.localImageURL){
                 imageContentHTML.innerHTML = `
                     <img src="${card.localImageURL}" class="card-image" alt="${card.title}">
                 `
@@ -167,19 +167,27 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
 
+            // TAGS
+            let tagsHTML = card.tags && card.tags.length > 0
+            ? `<div class="card-tags">${card.tags.map(tag => `<span class="card-tag">${tag}</span>`).join('')}</div>`
+            : '';
+
+
             // CARD
             cardElement.innerHTML = `
                 ${imageContentHTML}
                 <h3 class="card-title">${card.title}</h3>
-                <p class="card-description">${card.description}</p>
-                <p class="card-date">
-                    <!-- Calendar icon SVG -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/>
-                    </svg>
-                    ${card.date || 'No date specified'}
-                </p>
-
+                ${card.description ? `<p class="card-description">${card.description}</p>` : ""}
+                ${tagsHTML}
+                ${card.date 
+                    ? `<p class="card-date">
+                            <!-- Calendar icon SVG -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/>
+                            </svg>
+                            ${card.date || 'No date specified'}
+                        </p>`
+                : ""}
 
                 <div class="card-actions">
                     <button class="card-action-button edit-card-button" data-id="${card.id}" aria-label="Edit card: ${card.title}">
@@ -196,9 +204,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     </button>
                 </div>
             `
-
-
-
 
             cardsContainer.appendChild(cardElement)
         })
