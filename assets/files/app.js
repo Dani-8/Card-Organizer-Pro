@@ -209,6 +209,28 @@ document.addEventListener("DOMContentLoaded", () => {
         })
 
 
+        // DELETE BTN
+        document.querySelectorAll(".delete-card-button").forEach(btn => {
+            btn.addEventListener("click", (e) => {
+                cardToDeleteId = e.currentTarget.dataset.id
+                openConfirmModal()
+            })
+        })
+
+        // EDIT BTN
+        document.querySelectorAll(".edit-card-button").forEach(btn => {
+            btn.addEventListener("click", (e) => {
+                editingCardId = e.currentTarget.dataset.id
+
+                const cardToEdit = cards.find(card => card.id === editingCardId)
+                if(cardToEdit){
+                    openCardModal(cardToEdit)
+                }
+            })
+        })
+
+
+        
     }
 
 
