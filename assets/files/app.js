@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let date = cardDate.value
 
 
-        
+
 
 
 
