@@ -52,6 +52,31 @@ document.addEventListener("DOMContentLoaded", () => {
 // --------------------------------------------------------------------------------------------------------
 // --------------------------------------------------------------------------------------------------------
 // --------------------------------------------------------------------------------------------------------
+    addCardBtn.addEventListener("click", () => openCardModal())
+    /**
+     * OPEN THE CARD CREATION MODEL
+     */
+    function openCardModal(cardData = null){
+        modelOverlay.classList.remove("hidden")
+        cardForm.reset()
+        cardImgUploadCont.classList.remove("hidden")
+        cardImgPreviewCont.classList.add("hidden")
+
+        if(cardData){
+            modelTitle.textContent = "Edit Card"
+            saveCardBtn.textContent = "Save Changes"
+            
+
+
+        }
+    }
+
+
+
+
+
+
+
 
     /**
      * HANDLE FORM SUBMISSIOIN FOR ADDING/EDITING THE CARD....
