@@ -66,6 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
             modelTitle.textContent = "Edit Card"
             saveCardBtn.textContent = "Save Changes"
             
+            
 
 
         }
