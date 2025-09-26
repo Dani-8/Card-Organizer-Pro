@@ -19,6 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const cardIMGInput = document.getElementById("image-file-input")
     const cardDate = document.getElementById("card-date")
 
+    // CARD BTNS
+    const editCardBTN = document.querySelectorAll(".edit-card-button")
+    const deleteCardBTN = document.querySelectorAll(".delete-card-button")
+
     // IMAGE UI
     const cardImgUploadCont = document.getElementById("img-upload-cont")
     const cardImgPreviewCont = document.getElementById("image-preview-cont")
@@ -72,6 +76,19 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+
+    /**
+     * EDIT THE CARD 
+     */
+    editCardBTN.forEach(button => {
+        button.addEventListener("click", () => {
+            openCardModal()
+            console.log("edit");
+        })
+    })
+
+
+
     /**
      * CLOSE THE CARD CREATION MODEL
      */
@@ -85,16 +102,44 @@ document.addEventListener("DOMContentLoaded", () => {
         modelTitle.textContent = "Add New Card"
     }
 
+    /**
+     * CLOSE THE DELETE CONFIRMATION MODAL
+     */
+    function closeCardModal(){
+        closeModelBtn.classList.add("hidden")
+    }
+
+    closeCardModal.addEventListener("click")
+
 
 
     /**
      * OPEN THE DELETE CONFIRMATION MODAL
      */
-    fucntion openDeleteModal(){
-        
+    function openDeleteModal(){
+        deleteModal.classList.remove("hidden")
+    }
+
+    /**
+     * CLOSE THE DELETE CONFIRMATION MODAL
+     */
+    function closeDeleteModal(){
+        deleteModal.classList.add("hidden")
     }
 
 
+
+
+
+
+    
+    deleteCardBTN.forEach(button => {
+        button.addEventListener("click", () => {
+            openDeleteModal()
+            console.log("del");
+            
+        })
+    })
 
 
 
