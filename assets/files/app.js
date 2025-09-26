@@ -106,10 +106,11 @@ document.addEventListener("DOMContentLoaded", () => {
      * CLOSE THE DELETE CONFIRMATION MODAL
      */
     function closeCardModal(){
-        closeModelBtn.classList.add("hidden")
+        modelOverlay.classList.add("hidden")
     }
 
-    closeCardModal.addEventListener("click")
+    closeModelBtn.addEventListener("click", closeCardModal)
+    cancelCardBtn.addEventListener("click", closeCardModal)
 
 
 
