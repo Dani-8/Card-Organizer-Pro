@@ -72,8 +72,27 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    /**
+     * CLOSE THE CARD CREATION MODEL
+     */
+    function closeCardModal(){
+        modelOverlay.classList.add("hidden")
+        cardForm.reset()
+        editingCardId = null
+        cardImgUploadCont.classList.remove("hidden")
+        cardImgPreviewCont.classList.add("hidden")
+        saveCardBtnText.textContent = "Add Card"
+        modelTitle.textContent = "Add New Card"
+    }
 
 
+
+    /**
+     * OPEN THE DELETE CONFIRMATION MODAL
+     */
+    fucntion openDeleteModal(){
+        
+    }
 
 
 
