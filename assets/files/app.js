@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // DELETE MODEL
     const deleteModal = document.getElementById("confirmation-delete-modal")
-    const cancelDeleteBtn = document.getElementById("cancel-delete-btn")
+    const cancelDeleteModalBtn = document.getElementById("cancel-delete-btn")
     const confirmDeleteBtn = document.getElementById("confirm-delete-btn")
 
     // TOAST
@@ -83,10 +83,8 @@ document.addEventListener("DOMContentLoaded", () => {
     editCardBTN.forEach(button => {
         button.addEventListener("click", () => {
             openCardModal()
-            console.log("edit");
         })
     })
-
 
 
     /**
@@ -101,16 +99,11 @@ document.addEventListener("DOMContentLoaded", () => {
         saveCardBtnText.textContent = "Add Card"
         modelTitle.textContent = "Add New Card"
     }
-
-    /**
-     * CLOSE THE DELETE CONFIRMATION MODAL
-     */
-    function closeCardModal(){
-        modelOverlay.classList.add("hidden")
-    }
-
+    
     closeModelBtn.addEventListener("click", closeCardModal)
     cancelCardBtn.addEventListener("click", closeCardModal)
+
+
 
 
 
@@ -120,13 +113,19 @@ document.addEventListener("DOMContentLoaded", () => {
     function openDeleteModal(){
         deleteModal.classList.remove("hidden")
     }
-
+    deleteCardBTN.forEach(button => {
+        button.addEventListener("click", () => {
+            openDeleteModal()
+        })
+    })
+    
     /**
      * CLOSE THE DELETE CONFIRMATION MODAL
      */
     function closeDeleteModal(){
         deleteModal.classList.add("hidden")
     }
+    cancelDeleteModalBtn.addEventListener("click", closeDeleteModal)
 
 
 
@@ -134,13 +133,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     
-    deleteCardBTN.forEach(button => {
-        button.addEventListener("click", () => {
-            openDeleteModal()
-            console.log("del");
-            
-        })
-    })
 
 
 
