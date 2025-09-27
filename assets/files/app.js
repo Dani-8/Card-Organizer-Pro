@@ -86,6 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     })
 
+    
 
     /**
      * CLOSE THE CARD CREATION MODEL
